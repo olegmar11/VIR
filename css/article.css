@@ -1,5 +1,4 @@
 main {
-    /*margin: auto;*/
     width: 97vw;
 }
 
@@ -100,6 +99,7 @@ iframe{
 footer {
     margin-top: 1.25vw;
     padding: 1vw 1vw;
+    width: 95vw;
 }
 
 .modal {

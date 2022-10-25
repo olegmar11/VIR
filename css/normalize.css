@@ -332,3 +332,15 @@ textarea {
 .invisible {
     visibility: hidden;
 }
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: #363636;        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #752b2d;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #363636;  /* creates padding around scroll thumb */
+}

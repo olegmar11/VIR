@@ -1,30 +1,20 @@
-header, main{
+.body{
+    margin: auto;
+    width: 80vw;
+}
+
+.header, .main{
     pointer-events: none;
     background-color: #752b2d;
     opacity: 0;
     padding: 0 0 1vw;
 }
 
-body {
-    /*background-color: #752b2d;*/
-    margin: auto;
-    width: 80vw;
-}
-
-h1 {
-    font-size: 2.3vw;
-}
-
-h2 {
-    font-size: 1.8vw;
-    text-align: center;
-}
-
-hr{
+.hr{
     margin-bottom: 0;
 }
 
-header {
+.header {
     width: 100%;
     display: flex;
     align-items: center;
@@ -34,12 +24,14 @@ header {
     animation: fade 0.5s ease-in 0.3s forwards;
 }
 
-main{
+.main{
+    display: flex;
+    flex-direction: column;
     margin-top: 1vw;
-    animation: fade 0.7s ease-in 0.8s forwards;
+    animation: fade 0.5s ease-in 0.8s forwards;
 }
 
-header img {
+.header img {
     max-width: 15vw;
     height: auto;
 }
@@ -52,7 +44,7 @@ header img {
     align-items: center;
 }
 
-.photos img, article img {
+.photos img, .article img {
     cursor: pointer;
     max-width: 25vw;
     height: 100%;
@@ -60,7 +52,7 @@ header img {
     transition-duration: 0.4s;
 }
 
-section {
+.section {
     padding: 1vw 1.5vw 0;
     margin: auto;
     display: grid;
@@ -68,19 +60,19 @@ section {
     grid-gap: 1vw;
 }
 
-article {
+.article {
     cursor: pointer;
     position: relative;
     max-width: 25vw;
     height: auto;
 }
 
-article h2 {
+.article h2 {
     font-size: 1.3vw;
     text-align: left;
 }
 
-article p {
+.article p {
     font-size: 0.9vw;
 }
 
@@ -90,14 +82,8 @@ article p {
     left: 10px;
 }
 
-article:hover img, .photos img:hover {
+.article:hover img, .photos img:hover {
     opacity: 0.65;
-}
-
-footer {
-    margin-top: 1vw;
-    background-color: #752b2d;
-    padding: 1vw 1.5vw;
 }
 
 .modal {
@@ -161,6 +147,4 @@ footer {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
-
-
 

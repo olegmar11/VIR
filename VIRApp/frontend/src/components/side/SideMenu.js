@@ -4,11 +4,11 @@ import classes from './SideMenu.module.css'
 
 function SideMenu() {
   return (
-    <nav>
+    <nav className={classes.nav}>
       <Link to="/"><img src={logo} alt="Logo" /></Link>
       <Link to="/">На головну</Link>
       <Link to="/new-article">Створити нову статтю</Link>
-      <Link to="#">Увійти</Link>
+      <Link to="/login">Увійти</Link>
     </nav>
 );
 }

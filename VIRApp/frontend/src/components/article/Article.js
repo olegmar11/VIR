@@ -2,43 +2,66 @@ import SideMenu from "../side/SideMenu";
 import Footer from "../Footer";
 import classes from './Article.module.css'
 import poroh from '../img/poroh.png'
+import {useEffect, useState} from "react";
+import Overlay from "../home/Overlay";
 
 function Article() {
+  const article = {
+    pk: 1,
+    title: 'Мирного рішення не буде',
+    content: 'Мирного рішення точно не буде',
+    author: 'Петро Поршенко',
+    images: [poroh, poroh, poroh],
+    videos: ['https://www.youtube.com/embed/djV11Xbc914'],
+    approved: true,
+    date: '2022-11-30T21:17:32'
+  };
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [overlaySrc, setOverlaySrc] = useState('');
+
+  function openImage(e) {
+    setOverlaySrc(e.target.src);
+    setModalOpen(true);
+  }
+
+  function closeImage() {
+    setModalOpen(false);
+  }
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   return (
     <>
       <main className={classes.main}>
         <SideMenu/>
         <section className={classes.section}>
           <article className={classes.article}>
-            <h1>Lorem Ipsum</h1>
-            <h2>Description</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae nunc et dui convallis sagittis in at
-              turpis.
-              Aliquam nunc mauris, vulputate ac scelerisque sed, tincidunt vitae justo. Curabitur egestas lacus magna,
-              eu
-              imperdiet enim bibendum vitae. Pellentesque euismod tortor tortor, non tristique nunc pulvinar vel. Sed
-              est
-              ligula,
-              facilisis nec magna id, bibendum mollis augue. Suspendisse aliquet erat tortor, a efficitur sem vehicula
-              vitae.
-              Aliquam id tortor id lectus pulvinar viverra non et mauris.</p>
+            <h1>{article.title}</h1>
+            <p>{article.content}</p>
           </article>
           <hr/>
           <div className={classes.photos}>
-            <img onClick="openImage(this)" src={poroh} alt="Prev1"/>
-            <img onClick="openImage(this)" src={poroh} alt="Prev2"/>
-            <img onClick="openImage(this)" src={poroh} alt="Prev3"/>
+            {article.images.map((item) => {
+              return <img onClick={openImage} src={item} alt={poroh}/>;
+            })}
           </div>
           <hr/>
           <div className={classes.vid}>
-            <iframe width="961" height="721" src="https://www.youtube.com/embed/djV11Xbc914"
-                    title="a-ha - Take On Me (Official Video) [Remastered in 4K]" frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen className={classes.iframe}></iframe>
+            {article.videos.map((item) => {
+              return <iframe width="961" height="721" src={item}
+                             title="a-ha - Take On Me (Official Video) [Remastered in 4K]" frameBorder="0"
+                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                             allowFullScreen className={classes.iframe}></iframe>;
+            })}
           </div>
         </section>
       </main>
       <Footer/>
+      { modalOpen && <Overlay src={overlaySrc} onClose={closeImage} />}
     </>
   );
 }

@@ -1,32 +1,57 @@
 import ArticlePrev from "./ArticlePrev";
 import ArticlesService from "../../service/ArticlesService";
+import poroh from "../img/poroh.png";
+import {Link} from "react-router-dom";
 
 function ArticleList() {
-  /* new ArticlesService().createArticle(
-    {
-      "name": "Lorem Ipsum",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae nunc et dui convallis sagittis in at\n" +
-        "        turpis.\n" +
-        "        Aliquam nunc mauris, vulputate ac scelerisque sed, tincidunt vitae justo. Curabitur egestas lacus magna, eu\n" +
-        "        imperdiet enim bibendum vitae. Pellentesque euismod tortor tortor, non tristique nunc pulvinar vel. Sed est\n" +
-        "        ligula,\n" +
-        "        facilisis nec magna id, bibendum mollis augue. Suspendisse aliquet erat tortor, a efficitur sem vehicula vitae.\n" +
-        "        Aliquam id tortor id lectus pulvinar viverra non et mauris.",
-      "author": "Admin",
-    }).then((result) => {
-    alert("Article created!");
-  }).catch(() => {
-    alert('Error! Something unexpected happened');
-  });
-  let articles = [];
-  new ArticlesService().getArticles()
-    .then(res => {
-      articles = res.data
-    });
-  console.log(articles); TODO CREATION */
+  let articles = [{
+    pk: 1,
+    title: 'Мирного рішення не буде',
+    content: 'Мирного рішення точно не будеМирного рішення точно не будеМирного рішення точно не будеМирного рішення точно не будеМирного рішення точно не буде',
+    author: 'Петро Поршенко',
+    images: [poroh, poroh, poroh],
+    videos: ['https://www.youtube.com/embed/djV11Xbc914'],
+    approved: true,
+    date: '2022-11-30T21:17:32'
+  }, {
+    pk: 2,
+    title: 'Мирного рішення не буде',
+    content: 'Мирного рішення точно не буде',
+    author: 'Петро Поршенко',
+    images: [poroh, poroh, poroh],
+    videos: ['https://www.youtube.com/embed/djV11Xbc914'],
+    approved: true,
+    date: '2022-11-30T21:17:32'
+  }, {
+    pk: 3,
+    title: 'Мирного рішення не буде',
+    content: 'Мирного рішення точно не буде',
+    author: 'Петро Поршенко',
+    images: [poroh, poroh, poroh],
+    videos: ['https://www.youtube.com/embed/djV11Xbc914'],
+    approved: true,
+    date: '2022-11-30T21:17:32'
+  }, {
+    pk: 4,
+    title: 'Мирного рішення не буде',
+    content: 'Мирного рішення точно не буде',
+    author: 'Петро Поршенко',
+    images: [poroh, poroh, poroh],
+    videos: ['https://www.youtube.com/embed/djV11Xbc914'],
+    approved: true,
+    date: '2022-11-30T21:17:32'
+  }];
 
   return (
-    <ArticlePrev/>
+    <>
+      {articles.map((item) => {
+        return (
+          <Link key={item.pk} to={`/article/${item.pk}`}>
+            <ArticlePrev title={item.title} img={item.images[0]} desc={item.content}/>
+          </Link>
+        );
+      })}
+    </>
   );
 }
 

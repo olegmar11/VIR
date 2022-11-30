@@ -121,7 +121,7 @@ footer {
     max-width: 700px;
 }
 
-#caption-modal {
+.caption-modal {
     margin: auto;
     display: block;
     width: 80%;

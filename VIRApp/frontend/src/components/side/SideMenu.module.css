@@ -1,4 +1,4 @@
-nav {
+.nav {
     max-width: 25%;
     display: flex;
     justify-content: flex-start;
@@ -6,13 +6,13 @@ nav {
     text-align: center;
 }
 
-nav img {
+.nav img {
     max-width: 15vw;
     height: auto;
     transition-duration: 0.2s;
 }
 
-nav a{
+.nav a{
     background-color: #752b2d;
     padding: 1vw 0;
     margin: 0 0 1vw;
@@ -21,10 +21,10 @@ nav a{
     transition-duration: 0.2s;
 }
 
-nav a:hover{
+.nav a:hover{
     color: #b4b4b4;
 }
 
-nav a:hover img{
+.nav a:hover img{
     opacity: 0.8;
 }

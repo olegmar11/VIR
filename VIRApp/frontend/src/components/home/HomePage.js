@@ -2,22 +2,27 @@ import classes from "./HomePage.module.css"
 import logo from '../img/logo.png'
 import prev from '../img/prev.jpg'
 import Footer from "../Footer";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Overlay from "./Overlay";
 import ArticleList from "./ArticleList";
+import {Link} from "react-router-dom";
 
 function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
-  let  overlay_s, overlay_a;
-  function openImage(e){
+  const [overlaySrc, setOverlaySrc] = useState('');
+
+  function openImage(e) {
+    setOverlaySrc(e.target.src);
     setModalOpen(true);
-    overlay_s = prev;
-    overlay_a = e.alt;
   }
 
-  function closeImage(){
+  function closeImage() {
     setModalOpen(false);
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   return (
     <div className={classes.body}>
@@ -34,6 +39,11 @@ function HomePage() {
           vitae.
           Aliquam id tortor id lectus pulvinar viverra non et mauris.</p>
       </header>
+      <nav className={classes.nav}>
+        <Link to="/new-article">Створити нову статтю</Link>
+        <Link to="/login">Увійти</Link>
+        <Link to="/register">Зареєструватись</Link>
+      </nav>
       <main className={classes.main}>
         <span>
           <h2>Свіжі світлини</h2>
@@ -52,7 +62,7 @@ function HomePage() {
         </div>
       </main>
       <Footer/>
-      {/* modalOpen && <Overlay caption={"Prev1"} src={prev} onClose={closeImage} /> TODO FIX */}
+      { modalOpen && <Overlay src={overlaySrc} onClose={closeImage} />}
     </div>
   );
 }

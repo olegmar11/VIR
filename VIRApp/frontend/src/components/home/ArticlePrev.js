@@ -1,14 +1,12 @@
 import classes from "./HomePage.module.css";
-import image from "../img/prev.jpg"
-import ArticlesService from "../../service/ArticlesService";
 
-function ArticlePrev() {
+function ArticlePrev(props) {
   return (
     <article className={classes.article}>
-      <img src={image} alt="Article"/>
+      <img src={props.img} alt="Article"/>
       <div className={classes.description}>
-        <h2>Lorum</h2>
-        <p>Lorum ipsen is nice</p>
+        <h2>{props.title}</h2>
+        <p>{props.desc}</p>
       </div>
     </article>
   );

@@ -1,0 +1,87 @@
+.main {
+    width: 97vw;
+    display: flex;
+    gap: 2vw;
+}
+
+.content {
+    width: 100%;
+}
+
+.article {
+    background-color: #752b2d;
+    display: grid;
+    grid-template-columns: [article-img] 25% [article-info] 60% [article-buttons] 15%;
+    margin-bottom: 1vw;
+    transition-duration: 0.3s;
+}
+
+.article img {
+    cursor: pointer;
+    margin: 0.7vw;
+    max-width: 90%;
+    object-fit: cover;
+}
+
+.span {
+    cursor: pointer;
+}
+
+.info {
+    cursor: pointer;
+    padding: 0 0.7vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.article:hover{
+    background-color: #5e081c;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin: 1vw 0;
+    font-size: 1.2vw;
+    max-width: 3vw;
+    display: flex;
+    justify-content: center;
+    padding: 1vw 3vw;
+    color: white;
+    border: none;
+    transition-duration: 0.3s;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.buttonConfirm {
+    background-color: #73a856;
+}
+
+.buttonConfirm:hover {
+     background-color: #88d25d;
+}
+
+.buttonDecline {
+    background-color: #b35b5b;
+}
+
+.buttonDecline:hover {
+     background-color: #de3a3a;
+}

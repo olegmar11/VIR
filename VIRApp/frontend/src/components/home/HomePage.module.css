@@ -24,21 +24,32 @@
     animation: fade 0.5s ease-in 0.3s forwards;
 }
 
-.nav {
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     opacity: 0;
     height: 4vw;
     padding: 0 20px;
     background-color: #752b2d;
     margin-top: 1vw;
+    animation: fade 0.5s ease-in 0.5s forwards;
+}
+
+.nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
     text-align: center;
-    animation: fade 0.5s ease-in 0.5s forwards;
 }
 
-.nav a{
+.nav button {
+    background-color: transparent;
+    border: none;
+}
+
+.nav a , .nav button {
     height: 0.2vw;
     display: flex;
     align-items: center;
@@ -49,12 +60,13 @@
     transition-duration: 0.2s;
 }
 
-.nav a:first-child{
+.nav a:first-child {
     border: none;
 }
 
-.nav a:hover{
+.nav a:hover, .nav button:hover {
     color: #b4b4b4;
+    cursor: pointer;
 }
 
 .main {
@@ -146,7 +158,7 @@
     max-width: 700px;
 }
 
-.modal-content{
+.modal-content {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.3s;
     animation-name: zoom;

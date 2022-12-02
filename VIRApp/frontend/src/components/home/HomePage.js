@@ -20,6 +20,10 @@ function HomePage() {
     setModalOpen(false);
   }
 
+  function logout() {
+    /* Logout */
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
@@ -39,11 +43,16 @@ function HomePage() {
           vitae.
           Aliquam id tortor id lectus pulvinar viverra non et mauris.</p>
       </header>
-      <nav className={classes.nav}>
-        <Link to="/new-article">Створити нову статтю</Link>
-        <Link to="/login">Увійти</Link>
-        <Link to="/register">Зареєструватись</Link>
-      </nav>
+      <div className={classes.welcome}>
+        <h2>Вітаємо, гість</h2>
+        <nav className={classes.nav}>
+          <Link to="/admin">Адмінка</Link>
+          <Link to="/new-article">Створити нову статтю</Link>
+          <Link to="/login">Увійти</Link>
+          <Link to="/register">Зареєструватись</Link>
+          <button onClick={logout}>Вийти</button>
+        </nav>
+      </div>
       <main className={classes.main}>
         <span>
           <h2>Свіжі світлини</h2>
@@ -62,7 +71,7 @@ function HomePage() {
         </div>
       </main>
       <Footer/>
-      { modalOpen && <Overlay src={overlaySrc} onClose={closeImage} />}
+      {modalOpen && <Overlay src={overlaySrc} onClose={closeImage}/>}
     </div>
   );
 }

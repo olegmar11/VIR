@@ -1,17 +1,12 @@
 .footer {
-    /* opacity: 0;
-    animation: fade 0.5s ease-in 1.3s forwards; */
     margin-top: 1vw;
     background-color: #752b2d;
     padding: 1vw 1.5vw;
 }
 
-/* @keyframes fade {
-    0%{
-        opacity: 0;
+@media only screen and (max-width: 600px) {
+    .footer pre {
+        text-align: center;
+        white-space: pre-wrap;
     }
-    100%{
-        pointer-events: all;
-        opacity: 1;
-    }
-} */
+}

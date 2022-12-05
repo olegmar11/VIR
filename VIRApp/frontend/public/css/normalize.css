@@ -31,6 +31,10 @@ h2 {
     text-align: center;
 }
 
+p {
+    font-size: 1.5vw;
+}
+
 hr {
     box-sizing: content-box; /* 1 */
     overflow: visible; /* 2 */
@@ -52,7 +56,6 @@ a {
 abbr[title] {
     border-bottom: none; /* 1 */
     text-decoration: underline; /* 2 */
-    text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -343,4 +346,23 @@ body::-webkit-scrollbar-thumb {
   background-color: #752b2d;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
   border: 3px solid #363636;  /* creates padding around scroll thumb */
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    pre {
+        font-size: 14px;
+        overflow-wrap: normal;
+    }
 }

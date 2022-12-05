@@ -43,7 +43,7 @@
     text-overflow: ellipsis;
 }
 
-.article:hover{
+.article:hover {
     background-color: #5e081c;
 }
 
@@ -57,7 +57,8 @@
 .button {
     margin: 1vw 0;
     font-size: 1.2vw;
-    max-width: 3vw;
+    min-width: 60px;
+    width: 6vw;
     display: flex;
     justify-content: center;
     padding: 1vw 3vw;
@@ -75,7 +76,7 @@
 }
 
 .buttonConfirm:hover {
-     background-color: #88d25d;
+    background-color: #88d25d;
 }
 
 .buttonDecline {
@@ -83,5 +84,40 @@
 }
 
 .buttonDecline:hover {
-     background-color: #de3a3a;
+    background-color: #de3a3a;
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        width: 100vw;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .article {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 7px 0;
+    }
+
+    .span {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info {
+        margin: 0 4vw;
+    }
+
+    .btns {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .button {
+        min-width: 100px;
+        font-size: 16px;
+    }
 }

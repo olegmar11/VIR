@@ -24,6 +24,10 @@
     animation: fade 0.5s ease-in 0.3s forwards;
 }
 
+.header p {
+    margin: 0 2vw;
+}
+
 .welcome {
     display: flex;
     justify-content: space-between;
@@ -49,7 +53,7 @@
     border: none;
 }
 
-.nav a , .nav button {
+.nav a, .nav button {
     height: 0.2vw;
     display: flex;
     align-items: center;
@@ -142,7 +146,7 @@
 .modal {
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 30vh;
     left: 0;
     top: 0;
     width: 100%;
@@ -156,9 +160,6 @@
     display: block;
     width: 80%;
     max-width: 700px;
-}
-
-.modal-content {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.3s;
     animation-name: zoom;
@@ -184,7 +185,50 @@
     }
 }
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 600px) {
+    .article h2 {
+        font-size: 20px;
+    }
+
+    .nav a, .nav button, .welcome h2{
+        font-size: 14px;
+    }
+
+    .article p {
+        font-size: 14px;
+    }
+
+    .body {
+        width: 100vw;
+    }
+
+    .photos, .section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photos img, .article img {
+        max-width: 60vw;
+        margin-bottom: 1vw;
+    }
+
+    .article img {
+        max-width: 90vw;
+
+    }
+
+    .section {
+        margin: 0 4vw;
+    }
+
+    .article {
+        margin: 0;
+    }
+
+    .description {
+        width: 88vw;
+        bottom: 1vh;
+        left: 2vw;
+    }
 }
 

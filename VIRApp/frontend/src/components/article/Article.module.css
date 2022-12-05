@@ -114,8 +114,30 @@
     }
 }
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 600px) {
+    .main {
+        width: 100vw;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .article p {
+        font-size: 14px;
+    }
+
+    .photos {
+        flex-direction: column;
+    }
+
+    .photos img {
+        margin-bottom: 2px;
+        max-width: 60vw;
+    }
+
+    .iframe {
+        max-width: 90vw;
+        height: 50vw;
+    }
 }
 
 

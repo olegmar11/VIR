@@ -1,0 +1,9 @@
+.error h1 {
+    font-size: 10vw;
+}
+
+.error h1, .error h2 {
+    text-align: center;
+    color: #ab4449;
+}
+
